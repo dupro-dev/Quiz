@@ -4,63 +4,103 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context=".QuizFragment">
 
+    <data>
+        <variable
+            name="data"
+            type="com.example.quiz.QuizFragment" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         >
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hello_blank_fragment" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="354dp"
+            android:layout_height="258dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3">
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            tools:layout_editor_absoluteX="318dp"
-            tools:layout_editor_absoluteY="460dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="135dp"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            tools:layout_editor_absoluteY="460dp" />
+                <Button
+                    android:id="@+id/aBtn"
+                    android:layout_width="140dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:text="@{data.answers[0]}" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            tools:layout_editor_absoluteX="318dp"
-            tools:layout_editor_absoluteY="578dp" />
+                <Button
+                    android:id="@+id/bBtn"
+                    android:layout_width="140dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:text="@{data.answers[1]}" />
+            </LinearLayout>
 
-        <Button
-            android:id="@+id/button4"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="121dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cBtn"
+                    android:layout_width="140dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:text="@{data.answers[2]}" />
+
+                <Button
+                    android:id="@+id/dBtn"
+                    android:layout_width="140dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:text="@{data.answers[3]}" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
-            tools:layout_editor_absoluteY="578dp" />
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="395dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="395dp" />
+            app:layout_constraintGuide_begin="16dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="@{data.currentQuestion.text}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="24dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="20dp" />
-
-
+            app:layout_constraintGuide_begin="303dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

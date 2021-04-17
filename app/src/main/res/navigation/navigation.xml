@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.quiz.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.quiz.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_winnerFragment"
+            app:destination="@id/winnerFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_loserFragment"
+            app:destination="@id/loserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/winnerFragment"
+        android:name="com.example.quiz.WinnerFragment"
+        android:label="fragment_winner"
+        tools:layout="@layout/fragment_winner" >
+        <action
+            android:id="@+id/action_winnerFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loserFragment"
+        android:name="com.example.quiz.LoserFragment"
+        android:label="fragment_loser"
+        tools:layout="@layout/fragment_loser" >
+        <action
+            android:id="@+id/action_loserFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+</navigation>
